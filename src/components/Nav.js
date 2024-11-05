@@ -1,21 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
-
-export default function Nav() {
-
+export default function Nav({ ison, setIsOn }) {
     const navigate = useNavigate();
-    return(
-        <div className="nav-container">
-            <div className="logo">FARMSTER</div>
 
+    return (
+        <div className="nav-container">
+            <div className="logo" onClick={() => navigate('/')}>FARMSTER</div>
             <div className="nav-btn-container">
-                <div className="nav-btn" onClick={()=>{navigate('/about');}}><FontAwesomeIcon icon={faBars} /></div>
-                <div className="nav-btn" onClick={()=>{navigate('/about');}}>ABOUT</div>
-                <div className="nav-btn" onClick={()=>{navigate('/contact');}}>CONTACT</div>
-                <div className="nav-btn" onClick={()=>{navigate('/Mypage');}}>MYPAGE</div>
+                <div
+                    className="nav-btn"
+                    onClick={() => setIsOn(!ison)} // 버튼 클릭 시 메뉴 열기/닫기
+                >
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
             </div>
         </div>
-    )
+    );
 }

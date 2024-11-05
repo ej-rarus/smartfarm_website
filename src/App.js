@@ -2,28 +2,34 @@ import { createContext, useState } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-//pages
+// pages
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Mypage from './pages/Mypage';
 
-//component
+// components
 import Nav from './components/Nav';
-
+import Menu from './components/Menu';
+import Weather from './components/Weather';
+import Footer from './components/Footer';
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-      <Nav/>
+  const [isOn, setIsOn] = useState(false); // 메뉴 열림 상태를 boolean으로 설정
 
+  return (
+    <div className='App'>
+      <BrowserRouter>
+        <Nav ison={isOn} setIsOn={setIsOn} />
+        <Menu ison={isOn} setIsOn={setIsOn} /> {/* 메뉴 컴포넌트에 상태 전달 */}
+        <Weather />
         <Routes>
-          <Route path="/" element={<Home />} /> {/* Home으로 이동 */}
-          <Route path="/about" element={<About />}/> {/* localhost.3000/About 으로 이동 */}
-          <Route path="/Contact" element={<Contact />}/>
-          <Route path="/Mypage" element={<Mypage />}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Mypage" element={<Mypage />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );

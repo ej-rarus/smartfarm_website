@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 @font-face {
   font-family: 'EF_jejudoldam';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
@@ -16,18 +12,86 @@
   font-style: normal;
 }
 
-.nav-container{
-
+.App {
+  text-align: center;
   width: 100%;
+}
 
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   background-color: white;
 }
 
-.logo{
- color: #02b6fe;
- font-family: 'EF_jejudoldam';
+.logo {
+  font-family: 'EF_jejudoldam';
+  display: flex;
+  color: #02b6fe;
+  font-family: 'EF_jejudoldam';
+  font-size: 1.25rem;
 }
 
-.nav-btn{
+.nav-btn-container {
+  font-family: 'Pretendard-Regular';
   display: flex;
+  flex-direction: row;
+}
+
+.nav-btn {
+  display: flex;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.menu-container {
+  font-family: 'Pretendard-Regular';
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px; /* 메뉴의 너비 */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+
+  padding: 0.5rem;
+  border-top-left-radius: 20px;  /* 좌상단 모서리 둥글게 */
+  border-bottom-left-radius: 20px;  /* 좌하단 모서리 둥글게 */
+  overflow: hidden; /* 둥근 모서리가 화면을 벗어나지 않도록 */
+}
+
+.menu-title-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  
+}
+
+.menu-title {
+  margin: 20px 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.menu-close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.Foot-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #02b6fe;
+  color: white;
 }

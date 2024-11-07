@@ -36,13 +36,39 @@ export default function Weather() {
   }
 
   // 날씨 정보를 UI에 표시
+  let img_file_name = "";
+
+  switch(weather.weather[0].description) {
+    case '맑음':
+      img_file_name = "맑음.jpg";
+      break;
+    case '구름 조금':
+      img_file_name = "구름 조금.jpg";
+      break;
+    case '흐림':
+      img_file_name = "흐림.jpg";
+      break;
+    case '비':
+      img_file_name = "비.jpg";
+      break;
+    case '눈':
+      img_file_name = "눈.jpg";
+      break;
+    case '안개':
+      img_file_name = "안개.jpg";  
+      break;
+  }
   return (
     <div className="weather-container">
-      <h1>서울 날씨</h1>
-      <div className="weather-description">{weather.weather[0].description}</div>
-      <div className="temperature">{weather.main.temp}°C</div>
-      <div className="weather-info">습도: {weather.main.humidity}%</div>
-      <div className="weather-info">풍속: {weather.wind.speed}m/s</div>
+      <img className="weather-img" src={`${process.env.PUBLIC_URL}/images/${img_file_name}`}></img>
+      <div className= "weather-text">
+        <h1>서울 날씨</h1>
+        <div className="weather-description">{weather.weather[0].description}</div>
+        <div className="temperature">{weather.main.temp}°C</div>
+        <div className="weather-info">습도: {weather.main.humidity}%</div>
+        <div className="weather-info">풍속: {weather.wind.speed}m/s</div>
+      </div>
+
     </div>
   );
 }

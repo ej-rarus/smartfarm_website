@@ -22,13 +22,14 @@ function App() {
       <BrowserRouter>
         <Nav ison={isOn} setIsOn={setIsOn} />
         <Menu ison={isOn} setIsOn={setIsOn} /> {/* 메뉴 컴포넌트에 상태 전달 */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
-          <Route path="/Mypage" element={<Mypage />} />
-        </Routes>
-        <Weather/>
+        <div className='App-content'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Mypage" element={<Mypage />} />
+          </Routes>
+        </div>
         <Footer/>
       </BrowserRouter>
     </div>

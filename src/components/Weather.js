@@ -57,6 +57,9 @@ export default function Weather() {
     case '안개':
       img_file_name = "안개.jpg";  
       break;
+    case '실 비':
+      img_file_name = "실비.jpg";  
+      break;  
   }
   return (
     <div className="weather-container">

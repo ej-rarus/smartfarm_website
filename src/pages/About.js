@@ -4,7 +4,9 @@ export default function About() {
 
     return(
         <div>
-            About
+            <img className="simble-sun-img" src={process.env.PUBLIC_URL + 'images/simble-sun.png'} />
+
         </div>
     );
 }
+

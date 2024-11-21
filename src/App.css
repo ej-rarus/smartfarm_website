@@ -198,3 +198,72 @@
   text-align: center;
 }
 
+.fresh-vegetables-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cherry-tomatoes-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.simble-sun-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-slide-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 1024px;
+  white-space: nowrap;
+  scrollbar-width: none;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.home-slide-container::-webkit-scrollbar {
+  display: none;
+}
+
+.home-slide-img {
+  width: 33.333%;
+  min-width: 33.333%;
+  flex: 0 0 auto;
+  background-color: white;
+  padding: 0;
+  height: 200px;
+}
+
+.home-slide-img:last-child {
+  margin-right: 0.5rem;
+}
+
+.home-slide-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.home-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.fresh-vegetables-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+

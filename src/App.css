@@ -57,7 +57,7 @@
   font-family: 'PartialSansKR-Regular';
   display: flex;
   color: black;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .nav-btn-container {
@@ -77,30 +77,31 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 200px; /* 메뉴의 너비 */
+  width: 230px;
   height: 100%;
-  background-color: #02b6fe;
+  background-color: rgb(255, 106, 0, 0.8);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-
   padding: 0.5rem;
-  border-top-left-radius: 20px;  /* 좌상단 모서리 둥글게 */
-  border-bottom-left-radius: 20px;  /* 좌하단 모서리 둥글게 */
-  overflow: hidden; /* 둥근 모서리가 화면을 벗어나지 않도록 */
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
 }
 
 .menu-title-container{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
   
 }
 
 .menu-title {
-  margin: 20px 0;
+  margin: 8px 0;
   font-size: 1rem;
   cursor: pointer;
+  text-align: left;
+  width: 100%;
 }
 
 .menu-close-btn {
@@ -111,9 +112,58 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
+  color: white;
 }
 
+.menu-item {
+    position: relative;
+    margin: 5px 0;
+    color: white;
+}
 
+.menu-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 15px;
+    margin-left: 10px;
+    color: white;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.menu-item:hover .dropdown-arrow {
+    transform: rotate(90deg);  /* hover 시 화살표가 90도 회전 */
+}
+
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);  /* 반투명한 배경 */
+    border-radius: 5px;
+}
+
+.menu-item:hover .dropdown-menu {
+    max-height: 500px;
+}
+
+.dropdown-item {
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: white;
+    text-align: left;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);  /* hover 시 밝은 배경 */
+}
 
 /* 전체적인 스타일 */
 .weather-container {
@@ -219,40 +269,25 @@
 .home-slide-container {
   display: flex;
   flex-direction: row;
-  overflow-x: auto;
-  gap: 0;
-  margin: 0;
-  padding: 0;
   width: 100%;
   max-width: 1024px;
-  white-space: nowrap;
-  scrollbar-width: none;
-  box-sizing: border-box;
   margin: 0 auto;
-}
-
-.home-slide-container::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
 }
 
 .home-slide-img {
-  width: 33.333%;
+  width: 33.333%;  
   min-width: 33.333%;
   flex: 0 0 auto;
   background-color: white;
-  padding: 0;
-  height: 200px;
-}
-
-.home-slide-img:last-child {
-  margin-right: 0.5rem;
 }
 
 .home-slide-img img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
+
 
 .home-img-container {
   width: 100%;
@@ -264,6 +299,33 @@
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+}
+
+.slick-prev-custom {
+  left: 10px;
+}
+
+.slick-next-custom {
+  right: 10px;
+}
+
+.team-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 

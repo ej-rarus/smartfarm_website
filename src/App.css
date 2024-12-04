@@ -23,34 +23,88 @@
 }
 
 .App {
-  text-align: center;
-  width: 100%;
-  padding-bottom: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0;
 }
 
 .App-content {
-  min-height: 600px;
+    flex: 1;
+    padding-top: 3rem;
 }
 
-.Foot-container {
+.footer {
+    width: 100%;
+    background-color: #111111;
+    padding: 20px 0;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-family: 'PartialSansKR-Regular';
+    color: white;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.footer-info {
+    color: #999;
+    font-size: 12px;
+    text-align: left;
+    font-family: 'Pretendard-Regular';
+}
+
+.footer-info p {
+    margin: 3px 0;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    white-space: nowrap;
+}
+
+.social-icon {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    color: #02b6fe;
+}
+
+.fp-viewing-2 .footer {
   display: flex;
-  flex-direction: column;
-  background-color: #02b6fe;
-  color: white;
-	height: 60px;
-  width: 100%;
-  transform: translateY(0%);
 }
 
 .nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   height: 3rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding: 0 0.5rem;
   background-color: white;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -58,18 +112,22 @@
   display: flex;
   color: black;
   font-size: 1.2rem;
+  flex: 0 0 auto;
 }
 
 .nav-btn-container {
   font-family: 'Pretendard-Regular';
   display: flex;
   flex-direction: row;
+  z-index: 1000;
+  flex: 0 0 auto;
 }
 
 .nav-btn {
   display: flex;
   font-size: 1rem;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .menu-container {
@@ -162,7 +220,7 @@
 }
 
 .dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);  /* hover 시 밝은 배경 */
+    background-color: rgba(255, 255, 255, 0.2);  /* hover 시 밝은 배 */
 }
 
 /* 전체적인 스타일 */
@@ -241,7 +299,7 @@
   font-weight: bold;
 }
 
-/* 로딩 상태 스타일 */
+/* 딩 상태 스타일 */
 .loading {
   font-size: 18px;
   color: #888;
@@ -273,6 +331,8 @@
   max-width: 1024px;
   margin: 0 auto;
   overflow: hidden;
+  margin-top: 0;
+  padding: 1rem 0;
 }
 
 .home-slide-img {
@@ -291,14 +351,47 @@
 
 .home-img-container {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
 }
 
 .fresh-vegetables-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
+  max-height: 50vh;
+}
+
+/* 화블릿 크기 */
+@media screen and (min-width: 768px) {
+  .home-img-container {
+    height: 60vh;
+  }
+  .fresh-vegetables-img {
+    max-height: 60vh;
+  }
+}
+
+/* 데스크탑 크기 */
+@media screen and (min-width: 1024px) {
+  .home-img-container {
+    height: 70vh;
+  }
+  .fresh-vegetables-img {
+    max-height: 70vh;
+  }
+}
+
+/* 큰 화면 */
+@media screen and (min-width: 1440px) {
+  .home-img-container {
+    height: 80vh;
+  }
+  .fresh-vegetables-img {
+    max-height: 80vh;
+  }
 }
 
 .slick-arrow {
@@ -328,4 +421,842 @@
   object-fit: cover;
 }
 
+.page-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.page-container h1 {
+    font-family: 'Pretendard-Regular';
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.content {
+    text-align: left;
+    line-height: 1.6;
+    position: relative;
+    z-index: 50;
+    flex: 1;
+    padding-bottom: 15rem;
+}
+
+/* MossFarm 페이지 스타일 */
+.mossfarm-img {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    cursor: zoom-in;
+}
+
+.mossfarm-bed-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.magnifier {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 600% 600%;
+    top: 0;
+    left: 0;
+    transform: translate(calc(var(--mouse-x) - 125px), calc(var(--mouse-y) - 125px));
+    z-index: 2;
+}
+
+/* MossFarm 그리드 레이아웃 */
+.mossfarm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 반응형 그리드 */
+@media (max-width: 768px) {
+    .mossfarm-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 이미지 컨테이너 스타일 업데이트 */
+.mossfarm-img {
+    width: 100%;
+    position: relative;
+    cursor: zoom-in;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;  /* 이미지 율 고정 */
+}
+
+/* 이미지 스타일 업데이 */
+.mossfarm-bed-img {
+    width: 100%;
+    height: 100%;  /* 높이를 100%로 설정 */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/*  스타일은 그대로 유지 */
+.magnifier {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 600% 600%;
+    top: 0;
+    left: 0;
+    transform: translate(calc(var(--mouse-x) - 125px), calc(var(--mouse-y) - 125px));
+    z-index: 2;
+}
+
+/* MossFarm 이미지와 확대경 스타일 */
+.mossfarm-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.mossfarm-img {
+    width: 100%;
+    position: relative;
+    cursor: zoom-in;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.mossfarm-bed-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.magnifier {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: 600% 600%;
+    top: 0;
+    left: 0;
+    transform: translate(calc(var(--mouse-x) - 75px), calc(var(--mouse-y) - 75px));
+    z-index: 2;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .mossfarm-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* HomeDevice 이지 스타일 */
+.homedevice-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.homedevice-white-img,
+.homedevice-orange-img {
+    width: 100%;
+    aspect-ratio: 1/1;  /* 1:1 비율로 고정 */
+    object-fit: cover;  /* 이미지가 비율을 유지하면서 영역을 채우도록 */
+    border-radius: 10px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .homedevice-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Farmster 소개 페이지 스타일 */
+.farmster-intro-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tunnel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    animation: zoomInOut 4s ease-in-out forwards;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+.nav-menu {
+    position: relative;
+    z-index: 100;
+}
+
+.nav-menu a {
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+    color: #000;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+/* 전체 컨테이너 */
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 네비게이션 바 아래의 모든 컨텐츠를 감싸는 컨테이너 */
+.main-container {
+    margin-top: 3rem;
+    position: relative;
+}
+
+/* 이미지 섹션 */
+.image-section {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* 배경 이미지 */
+.tunnel-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+    animation: zoomInOut 4s ease-in-out forwards;
+    opacity: 0.7;
+}
+
+/* 컨텐츠 영역 */
+.content {
+    position: relative;
+    z-index: 1;
+    min-height: 50vh;
+}
+
+/* Fullpage.js 관련 스타일만 수정 */
+.section {
+    height: calc(100vh - 3rem) !important;  /* 네비게이션 바 높이만큼 뺌 */
+    position: relative;
+    padding-top: 0 !important;
+}
+
+.first-section {
+    margin-top: 3rem;
+}
+
+.farmster-intro-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tunnel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    animation: zoomInOut 4s ease-in-out forwards;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+/* fullpage.js 관 스타일 */
+.fullpage-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;  /* 추가 */
+    top: 0;          /* 추가 */
+    left: 0;         /* 추가 */
+}
+
+.section {
+    height: 100vh !important;
+    position: relative;
+    overflow: hidden;  /* 추가 */
+}
+
+.farmster-intro-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;  /* 추가 */
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 기존 스타일에 추가 */
+.footer-wrapper {
+    width: 100%;
+    margin-top: auto;  /* 컨텐츠 다음에 푸터가 오도록 */
+    position: relative; /* fixed에서 relative로 변경 */
+    z-index: 2;
+}
+
+/* Fullpage.js가 있는 페이지에서만 footer를 fixed로 설정 */
+.fullpage-container .footer-wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* 기존 스타일 추가 */
+.intro-container {
+    height: calc(100vh - 3rem);  /* 네비게이션 바 높이만큼 빼기 */
+    width: 100%;
+    position: fixed;
+    top: 3rem;     /* 네게이션 바 높이만큼 아래로 */
+    left: 0;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    z-index: 1;
+}
+
+.intro-section {
+    height: 85vh;
+    scroll-snap-align: start;
+}
+
+.intro-section-normal {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.intro-section-last {
+    height: calc(100vh + 60px);
+    scroll-snap-align: start;
+    padding-bottom: 60px;
+}
+
+.footer-space {
+    height: 60px;
+}
+
+/* Fullpage.js 관련 스타일 */
+.section {
+    height: 100vh !important;
+    position: relative;
+}
+
+.fullpage-image-container {
+    height: calc(100vh - 3rem);  /* 네비게이션 바 이만큼 뺌 */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.fullpage-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+    animation: zoomInOut 4s ease-in-out forwards;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.4);
+    }
+}
+
+.title-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(-30px);
+}
+
+.title-overlay h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: lighter;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    font-family: 'PartialSansKR-Regular';
+    opacity: 0;
+    animation: slideInFromLeft 2s ease-in-out forwards;
+    animation-delay: 4s;
+}
+
+.home-title h1 {
+    color: black;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 네비게이션 바 컨테이너 스타일 */
+.nav-fixed-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Home 관련 스타일만 남기 텍스트 니메이션 관련 스��일 제거 */
+.home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;  /* 모든 자식 요소들 사이의 간격을 일정하게 설정 */
+    min-height: calc(100vh - 60px); /* footer 높이만큼 뺌 */
+}
+
+.home-img-container {
+    width: 100%;
+    margin-bottom: 0;  /* 이미지 컨테이너 아래 마진 제거 */
+}
+
+.home-slide-container {
+    margin: 2rem 0;  /* 슬라이더 위아래 여백 가 */
+    padding: 0;
+}
+
+.video-container {
+    margin-bottom: 3rem;  /* footer와의 간격 */
+}
+
+.fresh-vegetables-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 기존의 .home-title과 관련된 스타일 제거 */
+
+.second-section {
+    background-color: rgb(184, 22, 225);  /* 원하는 배경색으로 변경 능 */
+}
+
+/* SmartFarm 페이지 스타일 */
+.farm-img-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3개의 이미지를 가로로 배열 */
+    gap: 20px;  /* 이미지 사이의 간격 */
+    margin-top: 2rem;
+}
+
+.farm-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;  /* 이미지 모서리 글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* 그림자 효과 */
+    transition: transform 0.3s ease;  /* 호버 를 위한 트랜지션 */
+}
+
+.farm-img:hover {
+    transform: scale(1.05);  /* 호버시 이미지 약간 확대 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .farm-img-container {
+        grid-template-columns: 1fr;  /* 모바일에는 한 줄에 하의 이미지 */
+        gap: 15px;
+    }
+}
+
+/* Contact 페이지 스타일 */
+.contact-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 4rem 2rem;
+    background-color: #ffffff;  /* 검정색에서 흰색으로 변경 */
+    color: #111111;            /* 글자색도 어두운색으로 변경 */
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+    font-size: 3rem;
+    color: #02b6fe;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+/* 정보 카드 그리드 레이웃 */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 5rem;
+    column-gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* 카드 섹션과 폼 사이의 간격을 위한 div */
+.contact-section-divider {
+    height: 5rem;
+}
+
+/* 문의하기 폼 */
+.contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 1200px 이하에서 2열로 변경 */
+@media (max-width: 1200px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+    }
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 4rem;
+        column-gap: 2rem;
+        padding: 2rem 1rem;
+        margin-bottom: 6rem;
+    }
+}
+
+.card-wrapper {
+    position: relative;
+    width: 200px;
+    height: 160px;
+    margin: 0 auto;
+    perspective: 1000px;  /* 3D 효과를 위한 원근감 */
+}
+
+.info-card {
+    width: 200px;
+    height: 160px;
+    margin: 0 auto;
+    background-color: #f8f8f8;
+    border-radius: 15px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.info-card h3 {
+    color: #111111;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+.info-card p {
+    color: #111111;
+    margin: 0.2rem 0;
+    font-size: 0.8rem;
+}
+
+/* 호버 효과 - 색상 변경만 유지 */
+.info-card:hover {
+    background-color: #111111;
+}
+
+.info-card:hover h3,
+.info-card:hover p {
+    color: #ffffff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1200px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .info-card {
+        width: 160px;
+        height: 140px;
+    }
+}
+
+/* 연락처 폼 스타일 */
+.contact-form-container {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 8rem auto;
+    padding: 3rem;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form {
+    display: grid;
+    gap: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: #111111;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #111111;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #02b6fe;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #02b6fe;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 2rem auto 0;
+}
+
+.submit-btn:hover {
+    background-color: #0294d3;
+    transform: translateY(-2px);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .info-card,
+    .contact-form-container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-header,
+.info-card,
+.contact-form-container,
+.location-container {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.home-img-container {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.home-slide-container {
+    margin: 2rem 0;  /* 슬라이더 위아래 여백 가 */
+    padding: 0;
+}
+
+.video-container {
+    margin-bottom: 3rem;  /* footer와의 간격 */
+}
+
+/* Home 컨테이너 */
+.home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.video-container {
+    margin-bottom: 3rem;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* 모바일 반형 */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .footer-info {
+        font-size: 10px;
+    }
+}
+
+/* 나머지 컨텐츠도 최대 너비 제한 */
+.contact-info-grid,
+.contact-form-container,
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}

@@ -8,22 +8,35 @@ export default function Menu({ ison, setIsOn }) {
         {
             title: 'ABOUT US',
             path: '/aboutus',
-            submenu: ['FARMSTER 소개', '프로젝트', 'CONTACT']
+            submenu: [
+                { name: 'FARMSTER 소개', path: '/aboutus/1' },
+                { name: '프로젝트', path: '/aboutus/2' },
+                { name: 'CONTACT', path: '/aboutus/3' }
+            ]
         },
         {
             title: 'SMART FARM',
             path: '/smartfarm',
-            submenu: ['SMARTFARM', '오피스FARM', '진욱님FARM', '이끼FARM', 'HOME DEVICE']
+            submenu: [
+                { name: 'SMARTFARM', path: '/smartfarm/' },
+                { name: '오피스FARM', path: '/smartfarm/officefarm' },
+                { name: '이끼FARM', path: '/smartfarm/mossfarm' },
+                { name: 'HOME DEVICE', path: '/smartfarm/homedevice' }
+            ]
         },
         {
             title: 'PRODUCTS',
             path: '/products',
-            submenu: ['SALAD', 'TOMATOES', 'HOME DEVICE']
+            submenu: [
+                { name: 'SALAD', path: '/products/1' },
+                { name: 'TOMATOES', path: '/products/2' },
+                { name: 'HOME DEVICE', path: '/products/3' }
+            ]
         },
         {
             title: 'SUSTAINABILITY',
             path: '/sustainability',
-            submenu: [] // 드롭다운 없음
+            submenu: []
         }
     ];
 
@@ -41,16 +54,14 @@ export default function Menu({ ison, setIsOn }) {
             <div className="menu-title-container">
                 {menuItems.map((item, index) => (
                     <div className="menu-item" key={index}>
-                        <div className="menu-title-wrapper">
-                            <div 
-                                className="menu-title"
-                                onClick={() => {
-                                    navigate(item.path);
-                                    setIsOn(false);
-                                }}
-                            >
-                                {item.title}
-                            </div>
+                        <div 
+                            className="menu-title"
+                            onClick={() => {
+                                navigate(item.path);
+                                setIsOn(false);
+                            }}
+                        >
+                            {item.title}
                         </div>
                         {item.submenu.length > 0 && (
                             <div className="dropdown-menu">
@@ -59,11 +70,11 @@ export default function Menu({ ison, setIsOn }) {
                                         className="dropdown-item" 
                                         key={subIndex}
                                         onClick={() => {
-                                            navigate(`${item.path}/${subIndex + 1}`);
+                                            navigate(subItem.path);
                                             setIsOn(false);
                                         }}
                                     >
-                                        {subItem}
+                                        {subItem.name}
                                     </div>
                                 ))}
                             </div>

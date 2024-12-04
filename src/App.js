@@ -4,9 +4,13 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // pages
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
 import Contact from './pages/Contact';
-import Mypage from './pages/Mypage';
+import FarmsterIntro from './pages/FarmsterIntro';
+import Project from './pages/Project';
+import SmartFarm from './pages/SmartFarm';
+import OfficeFarm from './pages/OfficeFarm';
+import MossFarm from './pages/MossFarm';
+import HomeDevice from './pages/HomeDevice';
 
 // components
 import Nav from './components/Nav';
@@ -18,22 +22,28 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 function App() {
-  const [isOn, setIsOn] = useState(false); // 메뉴 열림 상태를 boolean으로 설정
+  const [isOn, setIsOn] = useState(false);
 
   return (
     <div className='App'>
       <BrowserRouter>
-        <Nav ison={isOn} setIsOn={setIsOn} />
-        <Menu ison={isOn} setIsOn={setIsOn} /> {/* 메뉴 컴포넌트에 상태 전달 */}
+        <div className="nav-fixed-container">
+          <Nav ison={isOn} setIsOn={setIsOn} />
+        </div>
+        <Menu ison={isOn} setIsOn={setIsOn} />
         <div className='App-content'>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Mypage" element={<Mypage />} />
+            <Route path="/aboutus/1" element={<FarmsterIntro />} />
+            <Route path="/aboutus/2" element={<Project />} />
+            <Route path="/aboutus/3" element={<Contact />} />
+            <Route path="/smartfarm/" element={<SmartFarm />} />
+            <Route path="/smartfarm/officefarm" element={<OfficeFarm />} />
+            <Route path="/smartfarm/mossfarm" element={<MossFarm />} />
+            <Route path="/smartfarm/homedevice" element={<HomeDevice />} />
           </Routes>
         </div>
-        <Footer/>
+        <Footer />
       </BrowserRouter>
     </div>
   );

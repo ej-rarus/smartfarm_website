@@ -29,9 +29,9 @@ export default function Home() {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: false,  // 자동 재생 비활성화
-        prevArrow: <PrevArrow />,  // 커스텀 이전 버튼
-        nextArrow: <NextArrow />,  // 커스텀 다음 버튼
+        autoplay: false,
+        prevArrow: <PrevArrow />,
+        nextArrow: <NextArrow />,
     }
     
     return (

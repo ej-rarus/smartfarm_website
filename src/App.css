@@ -43,42 +43,43 @@
 
 .footer-container {
     width: 100%;
-    max-width: 1200px;
     margin: 0;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 20px;
+    padding: 0 10px;
     gap: 30px;
 }
 
 .footer-logo {
     font-family: 'PartialSansKR-Regular';
     color: white;
-    font-size: 24px;
+    font-size: 15px;
     white-space: nowrap;
 }
 
 .footer-info {
     color: #999;
-    font-size: 12px;
+    font-size: 8px;
     text-align: left;
     font-family: 'Pretendard-Regular';
+    margin: 0;
 }
 
 .footer-info p {
-    margin: 3px 0;
+    margin: 1px 0;
 }
 
 .footer-social {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     white-space: nowrap;
 }
 
 .social-icon {
     color: white;
-    font-size: 20px;
+    font-size: 25px;
     cursor: pointer;
 }
 
@@ -100,8 +101,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 3rem;
-  padding: 0 0.5rem;
+  height: 4rem;
+  padding: 0 1rem;
   background-color: white;
   z-index: 1000;
   box-sizing: border-box;
@@ -270,7 +271,7 @@
   color: #444;
 }
 
-/* 온도 표시 스타일 */
+/* 온도 표시 스���일 */
 .temperature {
   font-size: 25px;
   font-weight: bold;
@@ -278,7 +279,7 @@
   margin: 0.8rem;
 }
 
-/* 날씨 설명 스타일 */
+/* 날씨 설명 스일 */
 .weather-description {
   font-size: 12px;
   color: white;
@@ -299,7 +300,7 @@
   font-weight: bold;
 }
 
-/* 딩 상태 스타일 */
+/*  상태 스타일 */
 .loading {
   font-size: 18px;
   color: #888;
@@ -364,7 +365,7 @@
   max-height: 50vh;
 }
 
-/* 화블릿 크기 */
+/* 블릿 크기 */
 @media screen and (min-width: 768px) {
   .home-img-container {
     height: 60vh;
@@ -510,7 +511,7 @@
     transition: transform 0.3s ease;
 }
 
-/*  스타일은 그대로 유지 */
+/*  스타일은 그대로 유 */
 .magnifier {
     position: absolute;
     width: 250px;
@@ -660,7 +661,7 @@
     position: relative;
 }
 
-/* 네비게이션 바 아래의 모든 컨텐츠를 감싸는 컨테이너 */
+/* 네비게이션 바 아래의 든 컨텐츠를 감싸는 컨테이너 */
 .main-container {
     margin-top: 3rem;
     position: relative;
@@ -672,6 +673,7 @@
     height: 85vh;
     position: relative;
     margin-bottom: 2rem;
+    overflow: hidden;
 }
 
 /* 배경 이미지 */
@@ -794,7 +796,7 @@
     height: calc(100vh - 3rem);  /* 네비게이션 바 높이만큼 빼기 */
     width: 100%;
     position: fixed;
-    top: 3rem;     /* 네게이션 바 높이만큼 아래로 */
+    top: 3rem;     /* 네게이션  높이만큼 아래로 */
     left: 0;
     overflow: auto;
     scroll-snap-type: y mandatory;
@@ -906,7 +908,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Home 관련 스타일만 남기 텍스트 니메이션 관련 스��일 제거 */
+/* Home 관련 스타일만 남기 텍스트 니메이션 관련 스일 제거 */
 .home-container {
     width: 100%;
     display: flex;
@@ -938,7 +940,9 @@
 /* 기존의 .home-title과 관련된 스타일 제거 */
 
 .second-section {
-    background-color: rgb(184, 22, 225);  /* 원하는 배경색으로 변경 능 */
+    margin-top: -3rem;  /* 네비게이션 바 높이만큼 마이너스 마진 추 */
+    padding-top: 3rem;  /* 네비게이션 바 높이만큼 패딩 추가 */
+    background-color: rgb(184, 22, 225);  /* 원하는 배경색으로 설정 */
 }
 
 /* SmartFarm 페이지 스타일 */
@@ -1253,10 +1257,98 @@ footer {
     }
 }
 
-/* 나머지 컨텐츠도 최대 너비 제한 */
+/* 나머지 컨텐츠도 최대 너비 한 */
 .contact-info-grid,
 .contact-form-container,
 .location-container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Farmster 소개 페이지 스타일 */
+.intro-content {
+    padding: 3rem 2rem; /* 패딩을 늘려 여유 공간 추가 */
+    text-align: center;
+    color: #333;
+    background-color: #f9f9f9; /* 섹션 배경색 추가 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    margin: 1rem; /* 섹션 간 간격 추가 */
+}
+
+.intro-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #02b6fe; /* 제목 색상 */
+    font-weight: bold; /* 제목 두껍게 */
+    text-transform: uppercase; /* 문자 변환 */
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.intro-content ul {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0;
+}
+
+.intro-content li {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    text-align: left; /* 왼쪽 정렬 */
+    position: relative; /* 리스트 아이템에 위치 설정 */
+    padding-left: 1.5rem; /* 왼쪽 패딩 추가 */
+}
+
+.intro-content li::before {
+    content: "✔"; /* 체크 마크 추가 */
+    position: absolute;
+    left: 0; /* 왼쪽 정렬 */
+    color: #02b6fe; /* 체크 마크 색상 */
+}
+
+/* 두 번째 섹��의 배경색 설정 */
+.second-section {
+    background-color: rgb(184, 22, 225);  /* 원하는 배경색으로 설정 */
+    padding: 3rem 0;                      /* 상하 패딩 추가 */
+    color: white;                          /* 텍스트 색상 변경 */
+}
+
+/* 애니메이션 효과 */
+.fade-in-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.fade-in-text.delay {
+    animation-delay: 0.5s; /* FARMSTER 텍스트에 지연 효과 추가 */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 추가: title-overlay 클래스에 중앙 정렬 추가 */
+.title-overlay {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    height: 100%; /* 부모 요소의 높이에 맞춤 */
+}
+
+/* 모바일에서 메뉴 아이콘을 안으로 넣기 */
+@media (max-width: 768px) {
+    .nav-container {
+        height: 4rem; /* 모바일에서도 원래 높이로 복원 */
+        padding: 0 1rem; /* 좌우 패딩을 늘려 아이콘이 안으로 들어오도록 함 */
+    }
 }

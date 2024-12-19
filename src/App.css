@@ -1,3 +1,6 @@
+/* src/App.css */
+
+/* Font Faces */
 @font-face {
   font-family: 'EF_jejudoldam';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
@@ -48,7 +51,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 10px;
     gap: 30px;
 }
 
@@ -271,7 +273,7 @@
   color: #444;
 }
 
-/* 온도 표시 스���일 */
+/* 온도 표시 스일 */
 .temperature {
   font-size: 25px;
   font-weight: bold;
@@ -750,7 +752,7 @@
     overflow: hidden;
     position: fixed;  /* 추가 */
     top: 0;          /* 추가 */
-    left: 0;         /* 추가 */
+    left: 0;         /* 추��� */
 }
 
 .section {
@@ -796,7 +798,7 @@
     height: calc(100vh - 3rem);  /* 네비게이션 바 높이만큼 빼기 */
     width: 100%;
     position: fixed;
-    top: 3rem;     /* 네게이션  높이만큼 아래로 */
+    top: 3rem;     /* 네게이션  높이만큼 아래 */
     left: 0;
     overflow: auto;
     scroll-snap-type: y mandatory;
@@ -940,9 +942,9 @@
 /* 기존의 .home-title과 관련된 스타일 제거 */
 
 .second-section {
-    margin-top: -3rem;  /* 네비게이션 바 높이만큼 마이너스 마진 추 */
-    padding-top: 3rem;  /* 네비게이션 바 높이만큼 패딩 추가 */
-    background-color: rgb(184, 22, 225);  /* 원하는 배경색으로 설정 */
+    background-color: white; /* 원하는 배경색으로 설정 */
+    padding: 3rem 0;                      /* 상하 패딩 추가 */
+    color: white;                          /* 텍스트 색상 변경 */
 }
 
 /* SmartFarm 페이지 스타일 */
@@ -997,7 +999,7 @@
     letter-spacing: -1px;
 }
 
-/* 정보 카드 그리드 레이웃 */
+/* 정보 카드 카드 레이웃 */
 .contact-info-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1273,13 +1275,13 @@ footer {
     background-color: #f9f9f9; /* 섹션 배경색 추가 */
     border-radius: 10px; /* 모서리 둥글게 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
-    margin: 1rem; /* 섹션 간 간격 추가 */
+    margin: 1rem; /* 션 간 간격 추가 */
 }
 
 .intro-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #02b6fe; /* 제목 색상 */
+    color: #02b6fe; /* 제목 상 */
     font-weight: bold; /* 제목 두껍게 */
     text-transform: uppercase; /* 문자 변환 */
 }
@@ -1310,9 +1312,9 @@ footer {
     color: #02b6fe; /* 체크 마크 색상 */
 }
 
-/* 두 번째 섹��의 배경색 설정 */
+/* 두 번째 섹의 배경색 설정 */
 .second-section {
-    background-color: rgb(184, 22, 225);  /* 원하는 배경색으로 설정 */
+    background-color: white;  /* 원하는 배경색으로 설정 */
     padding: 3rem 0;                      /* 상하 패딩 추가 */
     color: white;                          /* 텍스트 색상 변경 */
 }
@@ -1351,4 +1353,152 @@ footer {
         height: 4rem; /* 모바일에서도 원래 높이로 복원 */
         padding: 0 1rem; /* 좌우 패딩을 늘려 아이콘이 안으로 들어오도록 함 */
     }
+}
+
+/* HomeDevice Styles */
+.homedevice-page-container {
+    padding: 40px; /* 여백 증가 */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* 중앙 정렬 */
+    background-color: #f9f9f9; /* 배경색 추가 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.page-title {
+    font-family: 'Pretendard-Regular';
+    font-size: 2.5rem; /* 제목 크기 조정 */
+    margin-bottom: 20px;
+    color: #333; /* 제목 색상 */
+    font-weight: bold; /* 제목 두껍게 */
+    text-align: center; /* 제목 가운데 정렬 */
+}
+
+.intro-text {
+    color: #777; /* 설명 문장 색상 회색으로 설정 */
+    margin-bottom: 20px; /* 여백 추가 */
+    line-height: 1.6; /* 줄 간격 증가 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.homedevice-intro {
+    margin-bottom: 30px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.features-list {
+    padding: 0;
+    margin: 20px 0; /* 리스트 간격 조정 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.feature-item {
+    font-size: 1.1rem; /* 리스트 아이템 크기 조정 */
+    margin: 10px 0; /* 리스트 아이템 간격 조정 */
+    position: relative; /* 체크 마크 위치 설정 */
+    padding-left: 25px; /* 체크 마크를 위한 패딩 */
+    opacity: 0; /* 초기 상태에서 투명하게 설정 */
+    animation: fadeIn 0.8s forwards; /* 애니메이션 효과 추가 (속도 조정) */
+}
+
+.feature-item:nth-child(1) {
+    animation-delay: 0.4s; /* 첫 번째 항목 애니메이션 지연 */
+}
+.feature-item:nth-child(2) {
+    animation-delay: 0.6s; /* 두 번째 항목 애니메이션 지연 */
+}
+.feature-item:nth-child(3) {
+    animation-delay: 0.8s; /* 세 번째 항목 애니메이션 지연 */
+}
+.feature-item:nth-child(4) {
+    animation-delay: 1s; /* 네 번째 항목 애니메이션 지연 */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* 최종 상태에서 불투명하게 설정 */
+    }
+}
+
+.homedevice-container {
+    display: flex; /* Flexbox 사용 */
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    justify-content: center; /* 중앙 정렬 */
+    gap: 20px; /* 이미지 간의 간격 */
+}
+
+.homedevice-white-img,
+.homedevice-orange-img {
+    width: 100%; /* 기본 너비를 100%로 설정 */
+    max-width: 400px; /* 최대 너비 설정 */
+    height: auto; /* 비율 유지 */
+    object-fit: cover; /* 비율 유지 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .homedevice-white-img,
+    .homedevice-orange-img {
+        width: calc(50% - 15px); /* 두 개의 이미지를 가로로 배치 */
+    }
+}
+
+/* Product Styles */
+.product-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px; /* 제품 카드의 너비 */
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
 }

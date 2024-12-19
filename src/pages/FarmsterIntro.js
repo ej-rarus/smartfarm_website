@@ -28,7 +28,7 @@ export default function FarmsterIntro() {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
         prevArrow: <PrevArrow />,
@@ -59,13 +59,20 @@ export default function FarmsterIntro() {
                         <div className="section second-section">
                             <Slider {...settings} className="home-slide-container">
                                 <div className="home-slide-img">
-                                    <img className="simble-white-img" src={process.env.PUBLIC_URL + '/images/simble-white.png'} alt="Slide 1" />
+                                    <img className="pajong1-img" src={process.env.PUBLIC_URL + '/images/pajong1.jpg'}alt="Slide 1" />
                                 </div>
                                 <div className="home-slide-img">
-                                    <img className="simble-white-img" src={process.env.PUBLIC_URL + '/images/simble-white.png'} alt="Slide 2" />
+                                    <img className="tomato1-img" src={process.env.PUBLIC_URL + '/images/tomato1.jpg'} alt="Slide 2" />
+                                </div>
+
+                                <div className="home-slide-img">
+                                    <img className="sunflower1-img" src={process.env.PUBLIC_URL + '/images/sunflower1.jpg'} alt="Slide 3" />
                                 </div>
                                 <div className="home-slide-img">
-                                    <img className="simble-white-img" src={process.env.PUBLIC_URL + '/images/simble-white.png'} alt="Slide 3" />
+                                    <img className="nono1-img" src={process.env.PUBLIC_URL + '/images/nono1.jpg'} alt="Slide 4" />
+                                </div>
+                                <div className="home-slide-img">
+                                    <img className="siru1-img" src={process.env.PUBLIC_URL + '/images/siru1.jpg'} alt="Slide 4" />
                                 </div>
                             </Slider>
                         </div>
@@ -79,7 +86,7 @@ export default function FarmsterIntro() {
                             <div className="intro-content">
                                 <h2>주요 기능</h2>
                                 <ul>
-                                    <li>스마트 농업 관리: IoT 기술을 활용하여 농작물의 생육 상태를 실시간으로 모니터링합니다.</li>
+                                    <li>스마트 농업 관리: IoT 기���을 활용하여 농작물의 생육 상태를 실시간으로 모니터링합니다.</li>
                                     <li>데이터 기반 의사결정: 농업 데이터를 분석하여 맞춤형 솔루션을 제공합니다.</li>
                                     <li>커뮤니티 연결: 농업인과 소비자가 직접 연결되어 신선한 농산물을 거래할 수 있습니다.</li>
                                     <li>지속 가능한 농업: 친환경 농업을 지원하고, 지속 가능한 농업 관행을 통해 환경 보호에 기여합니다.</li>

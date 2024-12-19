@@ -27,11 +27,7 @@ export default function Menu({ ison, setIsOn }) {
         {
             title: 'PRODUCTS',
             path: '/products',
-            submenu: [
-                { name: 'SALAD', path: '/products/1' },
-                { name: 'TOMATOES', path: '/products/2' },
-                { name: 'HOME DEVICE', path: '/products/3' }
-            ]
+            submenu: []
         },
         {
             title: 'SUSTAINABILITY',

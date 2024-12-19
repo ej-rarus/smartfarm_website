@@ -11,6 +11,7 @@ import SmartFarm from './pages/SmartFarm';
 import OfficeFarm from './pages/OfficeFarm';
 import MossFarm from './pages/MossFarm';
 import HomeDevice from './pages/HomeDevice';
+import Products from './pages/Products';
 
 // components
 import Nav from './components/Nav';
@@ -41,6 +42,7 @@ function App() {
             <Route path="/smartfarm/officefarm" element={<OfficeFarm />} />
             <Route path="/smartfarm/mossfarm" element={<MossFarm />} />
             <Route path="/smartfarm/homedevice" element={<HomeDevice />} />
+            <Route path="/products" element={<Products />} />
           </Routes>
         </div>
         <Footer />
